@@ -10,6 +10,11 @@ then
     lib_path="lib"
 fi
 
+if [[ ${java_version} == "13-ea" ]];
+then
+    java_version="13"
+fi
+
 mkdir -p /usr/local/include/opencv4
 curl -L https://github.com/denismakogon/java-opencv/raw/master/release/java-${java_version}/include_opencv4.tar.gz  | \
     tar xvz -C /
