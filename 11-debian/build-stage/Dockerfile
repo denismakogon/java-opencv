@@ -1,6 +1,5 @@
 FROM openjdk:11
 
-# todo: move to a separate docker image
 ENV OPENCV_VERSION="4.1.0"
 
 ENV LIB="libswscale-dev \
@@ -77,9 +76,4 @@ RUN mkdir /tmp/opencv && \
     rm -f /var/cache/apt/archives/*.deb \
         /var/cache/apt/archives/partial/*.deb \
         /var/cache/apt/*.bin; \
-    cd && rm -rf /tmp/opencv && \
-    apt-get update && apt-get install libgtk2.0-dev -qy
-
-
-ENV PKG_CONFIG_PATH /usr/local/lib/pkgconfig
-ENV LD_LIBRARY_PATH /usr/local/lib
+    cd && rm -rf /tmp/opencv
