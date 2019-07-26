@@ -2,8 +2,8 @@
 
 set -xe
 
-rm -fr /root/opencv_shared/${JAVAVERSION}
-mkdir /root/opencv_shared/${JAVAVERSION}/
+mkdir -p /root/opencv_shared/
+rm -fr /root/opencv_shared/*.tar.gz
 
-tar -czvf /root/opencv_shared/${JAVAVERSION}/${OPENCVFOLDER}.tar.gz /usr/local/${OPENCVFOLDER}
-tar -czvf /root/opencv_shared/${JAVAVERSION}/include_opencv4.tar.gz /usr/local/include/opencv4
+tar -czvf /root/opencv_shared/lib64.tar.gz /usr/local/lib64
+tar -czvf /root/opencv_shared/include_opencv4.tar.gz /usr/local/include/opencv4
