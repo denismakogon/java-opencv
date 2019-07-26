@@ -12,3 +12,14 @@ that contains OpenCV libs installed ready to be applied within multistage builds
 
 If you'd like to use OpenCV binaries instead of using my docker images, please take a look at [release folder](release).
 This folder contains a set of archives for each Java distribution (11 for Debian and 13 for Oracle Linux, for now).
+
+Here's how you can apply OpenCV binaries to Java 13 image:
+```dockerfile
+FROM openjdk:13
+
+ENV PKG_CONFIG_PATH /usr/local/lib64/pkgconfig
+ENV LD_LIBRARY_PATH /usr/local/lib64
+
+RUN curl -L https://raw.githubusercontent.com/denismakogon/java-opencv/master/apply_binaries.sh | /bin/bash 
+
+```
